@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Week 02</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;family=Orbitron:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="dist/output.css" rel="stylesheet"/>
+<link href="liquid-bg.css" rel="stylesheet"/> <style>
+/* --- Interactive tab/link animations (Tailwind-friendly) --- */
+:root{ --glow: 255 255 255;
+}
+/* subtle float + shine on hover */
+.week-tab{ position: relative; display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .65rem; border-radius: 8px; transition: transform .25s cubic-bezier(.2,.8,.2,1), filter .25s, background-color .25s, box-shadow .25s; will-change: transform, filter;
+}
+.week-tab::before{ content:""; position:absolute; inset:-1px; border-radius: 14px; background: radial-gradient(120px 40px at 20% 10%, rgba(var(--glow)/.22), transparent 60%), radial-gradient(120px 40px at 80% 90%, rgba(var(--glow)/.16), transparent 60%); opacity:0; transition: opacity .25s ease; pointer-events:none;
+}
+.week-tab:hover{ transform: translateY(-2px); filter: saturate(1.1); box-shadow: 0 10px 30px rgba(0,0,0,.18); background-color: rgba(255,255,255,.06);
+}
+.week-tab:hover::before{opacity:1;}
+.week-tab:active{ transform: translateY(0px) scale(.98); transition-duration: .12s;
+} /* "soft pop" on click */
+@keyframes softPop{ 0%{transform: translateY(0) scale(1);} 45%{transform: translateY(-2px) scale(1.03);} 100%{transform: translateY(0) scale(1);}
+}
+.week-tab.is-anim{ animation: softPop .42s cubic-bezier(.2,.8,.2,1);
+} /* --- 3D background helpers --- */
+@media (prefers-reduced-motion: reduce){ .week-tab, .week-tab::before{transition:none !important; .bg-text-gradient{animation:none !important; background-size:auto !important;}
+} .week-tab.is-anim{animation:none !important;}
+}
+.bg-text-gradient{background-image:linear-gradient(90deg, #D27C91 0%, #2FA8A0 100%); background-size: 200% 200%; animation: gradientDrift 18s ease-in-out infinite;}
+@keyframes gradientDrift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+50%{background-position:100% 50%;}100%{background-position:0% 50%;}} /* content card sizing */
+.content-card{ width: 100%; max-width: 780px; padding: 2.1rem; margin-left: auto; margin-right: auto;
+}
+/* a tiny bit wider on large screens, but never edge-to-edge */
+@media (min-width: 1024px){ .content-card{ max-width: 820px; }
+}
+/* bottom nav buttons spacing */
+.nav-buttons{ gap: 8px; } .home-cta{ position: relative; border: 1px solid rgba(255,255,255,.26); text-shadow: 0 1px 2px rgba(0,0,0,.55); filter: saturate(1.15) contrast(1.05);
+}
+.home-cta::after{ content:""; position:absolute; inset:0; border-radius: inherit; background: rgba(0,0,0,.18); pointer-events:none;
+}
+.home-cta:hover{ filter: saturate(1.25) contrast(1.08); } 
+
+/* Improve readability over moving background */
+h1, h2, h3, h4, h5, h6, p, li, a, footer, header {
+  text-shadow: 0 2px 14px rgba(0,0,0,.70);
+}
+.content-card{
+  background-color: rgba(2, 6, 23, 0.75) !important; /* slate-950/75 */
+  border-color: rgba(255,255,255,0.10) !important;
+}
+</style>
+</head>
+<body class="week-page min-h-screen flex flex-col bg-week-gradient text-white font-poppins">
+<div class="fixed inset-0 -z-10" id="liquid-bg"></div>
+<header class="punk-nav sticky top-0 z-50">
+<div class="max-w-6xl mx-auto px-4">
+<div class="nav-container">
+<a class="logo" href="index.html">Lost in Tra(i)nslation</a>
+<button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+<nav>
+<ul class="nav-menu" id="navMenu">
+<li class="home"><a href="index.html">◢ HOME ◣</a></li>
+<li><a href="week1.html">Week 01</a></li>
+<li><a href="week2.html">Week 02</a></li>
+<li><a href="week3.html">Week 03</a></li>
+<li><a href="week4.html">Week 04</a></li>
+<li><a href="week5.html">Week 05</a></li>
+<li><a href="week6.html">Week 06</a></li>
+<li><a href="week7.html">Week 07</a></li>
+<li><a href="week8.html">Week 08</a></li>
+<li><a href="week9.html">Week 09</a></li>
+<li><a href="week10.html">Week 10</a></li>
+<li><a href="week11.html">Week 11</a></li>
+<li><a href="week12.html">Week 12</a></li>
+<li><a href="week13.html">Week 13</a></li>
+
+        <li><a href="assets/PD_SirykV_Portfolio_NL.pdf" download>Download PDF</a></li>
+      </ul>
+</nav>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center text-center px-4 py-10 mt-8">
+<section class="w-full content-card bg-slate-950/70 border border-white/15 rounded-2xl shadow-glass text-left animate-fade backdrop-blur-lg">
+<h1 class="font-orbitron text-4xl text-5xl bg-text-gradient bg-clip-text text-transparent mb-3 tracking-wide"> Week 13 - Pixelhunting</h1>
+<h2 class="text-lg text-xl text-blue-200 mb-6 font-light">Siryk Viktor ontwerpdocumentatie PRTT</h2>
+<p class="leading-relaxed mb-8 text-gray-200"> Deze week stond in het teken van het corrigeren van fouten en "pixelhunting". Ik heb de bordjes, tekst en andere elementen bewerkt zodat ze harmonieus bij elkaar passen. Ik heb saaie knoppen verwijderd en vervangen door ‘tekstknoppen’, omdat die beter uitleggen wat er gebeurt als je erop klikt. Deze week heb ik ook besloten om op sommige pagina's van mijn website processdocs afbeeldingen toe te voegen waar dat relevant was, zodat het duidelijker wordt welke veranderingen er precies worden bedoeld. Ik heb de docenten heel veel vragen gesteld en daardoor ben ik er toch in geslaagd om uiteindelijk een behoorlijk goed prototype te maken. </p>
+<div class="nav-buttons mt-8 flex flex-row flex-wrap items-center justify-center w-full"> <a class="week-tab inline-flex min-w-[170px] justify-center px-8 py-4 text-lg border backdrop-blur-md text-white font-medium hover:shadow-lg transition bg-slate-950/75 border-white/10 nav-prev" href="week12.html"> Vorige week</a> <a class="week-tab inline-flex min-w-[180px] justify-center px-8 py-4 text-lg bg-text-gradient home-cta text-white font-medium hover:shadow-lg transition nav-home" href="index.html">Naar Home</a><a class="week-tab inline-flex min-w-[180px] justify-center px-8 py-4 text-lg border backdrop-blur-md text-white font-medium hover:shadow-lg transition bg-slate-950/75 border-white/10 nav-photos" href="photos-week13.html">Foto’s</a>
+</div>
+</section>
+</main>
+<footer class="text-center py-4 bg-slate-950/70 backdrop-blur-xl border-t border-white/10 text-sm text-white/90 drop-shadow">
+<div class="flex flex-col md:flex-row items-center justify-center gap-2 px-4">
+<span>© 2025 Siryk Viktor — 1GDM2, AP Hogeschool Antwerpen</span>
+<span class="hidden md:inline text-white/30">•</span>
+<a class="underline decoration-white/30 hover:decoration-white/70" href="https://github.com/ViktorSiryk/projectdocs.git" rel="noopener" target="_blank">Visit my GitHub</a>
+<span class="hidden md:inline text-white/30">•</span>
+<a class="underline decoration-white/30 hover:decoration-white/70" href="https://www.figma.com/proto/ZdUn11dBzSRj7O3ZyVsCQB/Mobile-versie---NMBS-App?node-id=1-735&amp;p=f&amp;t=HcHBQH7z0fFjmqD1-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A735" rel="noopener" target="_blank">Visit my Figma project</a>
+</div>
+</footer> <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script>
+(function(){ // click micro-animation for week tabs / nav buttons function bindSoftPop(){ document.querySelectorAll('.week-tab').forEach(function(el){ el.addEventListener('click', function(){ el.classList.remove('is-anim'); // force reflow void el.offsetWidth; el.classList.add('is-anim'); }, {passive:true}); }); } // run when scripts loaded window.addEventListener('DOMContentLoaded', function(){ bindSoftPop(); }); 
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="liquid-bg.js"></script>
+<script src="nav-toggle.js"></script><script src="custom-cursor.js"></script></body>
+</html>
